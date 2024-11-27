@@ -2,11 +2,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-<<<<<<< HEAD
-name: 'my_new_project'
-=======
 name: 'NovaDrive'
->>>>>>> cec479dc3af28015ff3538d7de94434e3911e14e
 version: '1.0.0'
 config-version: 2
 
@@ -43,8 +39,4 @@ models:
   my_new_project:
     # Applies to all files under models/example/
     example:
-<<<<<<< HEAD
       +materialized: table
-=======
-      +materialized: table
->>>>>>> cec479dc3af28015ff3538d7de94434e3911e14e
