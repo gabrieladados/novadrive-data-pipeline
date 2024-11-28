@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_vendedores
+    description: >
+      Este modelo cria uma visualização consolidada da tabela `vendedores` disponível na fonte `sources`. 
+      Ele padroniza os nomes dos vendedores em caixa de título e garante que a data de atualização esteja sempre preenchida, 
+      utilizando a data de inclusão como fallback. O modelo é usado para análises relacionadas aos vendedores e suas concessionárias.
+    columns:
+      - name: ID_VENDEDORES
+        description: Identificador único de cada vendedor.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_VENDEDOR
+        description: Nome do vendedor formatado em caixa de título para padronização.
+      - name: ID_CONCESSIONARIAS
+        description: Identificador da concessionária onde o vendedor está alocado.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data em que o registro foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data da última atualização do registro. Caso esteja ausente na tabela de origem, 
+          será substituída pela data de inclusão (`DATA_INCLUSAO`) para garantir consistência.

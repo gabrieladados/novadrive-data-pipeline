@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: fonte_vendas
+    description: >
+      Este modelo cria uma visualização consolidada da tabela `vendas` disponível na fonte `sources`. 
+      Ele formata o valor pago como decimal com duas casas decimais e garante que a data de atualização esteja sempre preenchida, 
+      utilizando a data de inclusão como fallback. Este modelo é utilizado para análises relacionadas a vendas de veículos, 
+      incluindo informações sobre clientes, vendedores, concessionárias e valores pagos.
+    columns:
+      - name: ID_VENDAS
+        description: Identificador único de cada venda.
+        tests:
+          - unique
+          - not_null
+      - name: ID_VEICULOS
+        description: Identificador do veículo vendido.
+        tests:
+          - not_null
+      - name: ID_CONCESSIONARIAS
+        description: Identificador da concessionária onde a venda foi realizada.
+        tests:
+          - not_null
+      - name: ID_VENDEDORES
+        description: Identificador do vendedor responsável pela venda.
+        tests:
+          - not_null
+      - name: ID_CLIENTES
+        description: Identificador do cliente que realizou a compra.
+        tests:
+          - not_null
+      - name: VALOR_PAGO
+        description: Valor pago na venda, formatado como decimal com duas casas decimais.
+        tests:
+          - not_null
+      - name: DATA_VENDA
+        description: Data em que a venda foi realizada.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data em que o registro foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data da última atualização do registro. Caso esteja ausente na tabela de origem, 
+          será substituída pela data de inclusão (`DATA_INCLUSAO`).

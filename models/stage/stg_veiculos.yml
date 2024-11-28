@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_veiculos
+    description: >
+      Este modelo cria uma visualização consolidada da tabela `veiculos` disponível na fonte `sources`. 
+      Ele padroniza os nomes e tipos de veículos em caixa de título, converte os valores para o tipo decimal com duas casas decimais 
+      e garante que a data de atualização esteja sempre preenchida, utilizando o timestamp atual como fallback.
+    columns:
+      - name: ID_VEICULOS
+        description: Identificador único de cada veículo.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_VEICULO
+        description: Nome do veículo formatado em caixa de título para padronização.
+      - name: TIPO_VEICULO
+        description: Tipo do veículo (por exemplo, carro, moto), formatado em caixa de título.
+      - name: VALOR_VEICULO
+        description: Valor do veículo convertido para o tipo decimal com duas casas decimais.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data em que o registro foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data da última atualização do registro. Caso esteja ausente na tabela de origem, 
+          será substituída pelo timestamp atual (`CURRENT_TIMESTAMP()`).

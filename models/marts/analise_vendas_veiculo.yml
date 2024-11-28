@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: analise_vendas_veiculo
+    description: >
+      O modelo `analise_vendas_veiculo` fornece uma análise detalhada das vendas por veículo. Ele calcula 
+      a quantidade de unidades vendidas, o total de vendas realizadas e o valor médio pago pelas vendas 
+      para cada tipo e modelo de veículo. Este modelo permite avaliar o desempenho de vendas de cada veículo 
+      no portfólio, facilitando a identificação de quais veículos estão gerando mais receita e qual é o preço médio das vendas.
+    columns:
+      - name: ID_VEICULOS
+        description: Identificador único do veículo.
+        tests:
+          - not_null
+      - name: NOME_VEICULO
+        description: Nome do veículo.
+        tests:
+          - not_null
+      - name: TIPO_VEICULO
+        description: Tipo do veículo.
+        tests:
+          - not_null
+      - name: valor_sugerido
+        description: Valor sugerido para o veículo, ou seja, o valor de tabela do veículo.
+        tests:
+          - not_null
+      - name: qtd_vendida
+        description: Quantidade total de unidades do veículo vendidas.
+        tests:
+          - not_null
+      - name: total
+        description: Total de valor pago pelas vendas do veículo, arredondado para duas casas decimais.
+        tests:
+          - not_null
+      - name: valor_medio
+        description: Valor médio pago por cada unidade do veículo vendida, arredondado para duas casas decimais.
+        tests:
+          - not_null

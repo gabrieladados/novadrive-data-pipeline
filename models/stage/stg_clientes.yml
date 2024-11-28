@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_clientes
+    description: >
+      Este modelo cria uma visualização consolidada da tabela `clientes` disponível na fonte `sources`. 
+      Ele padroniza o nome dos clientes, remove espaços em excesso nos endereços e garante que a data de atualização esteja sempre preenchida.
+    columns:
+      - name: ID_CLIENTES
+        description: Identificador único de cada cliente.
+        tests:
+          - not_null
+      - name: NOME_CLIENTE
+        description: Nome do cliente formatado em caixa de título para padronização.
+      - name: ENDERECO
+        description: Endereço do cliente, com espaços extras removidos para consistência.
+      - name: ID_CONCESSIONARIAS
+        description: Identificador único da concessionária associada ao cliente.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data em que o registro foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data da última atualização do registro. Caso esteja ausente na tabela de origem, 
+          será substituída pela data de inclusão (`DATA_INCLUSAO`) para garantir consistência.

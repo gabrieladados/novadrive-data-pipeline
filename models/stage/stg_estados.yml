@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: fstg_estados
+    description: >
+      Este modelo cria uma visualização consolidada da tabela `estados` disponível na fonte `sources`. 
+      Ele padroniza o nome dos estados em caixa de título e as siglas em letras maiúsculas, além de garantir 
+      que a data de atualização esteja sempre preenchida utilizando a data de inclusão como fallback.
+    columns:
+      - name: ID_ESTADOS
+        description: Identificador único de cada estado.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_ESTADO
+        description: Nome do estado formatado em caixa de título para padronização.
+      - name: SIGLA_ESTADO
+        description: Sigla do estado formatada em letras maiúsculas para consistência.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data em que o registro foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data da última atualização do registro. Caso esteja ausente na tabela de origem, 
+          será substituída pela data de inclusão (`DATA_INCLUSAO`) para garantir consistência.

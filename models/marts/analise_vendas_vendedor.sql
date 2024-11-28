@@ -1,5 +1,3 @@
---vendas por vendedor: id, vendedor, concessionaria, quantidade, total, valor medio
-
 {{config(materalized='table')}}
 
 SELECT 

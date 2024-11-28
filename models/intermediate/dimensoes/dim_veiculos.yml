@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_veiculos
+    description: >
+      A tabela `dim_veiculos` contém informações detalhadas sobre os veículos, incluindo o identificador único do veículo,
+      o nome, o tipo, o valor do veículo e as datas de inclusão e atualização. Ela é usada para fornecer informações 
+      essenciais sobre os veículos em análises e relatórios, associando-os a vendas, concessionárias e clientes.
+    columns:
+      - name: ID_VEICULOS
+        description: Identificador único de cada veículo.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_VEICULO
+        description: Nome do veículo.
+      - name: TIPO_VEICULO
+        description: Tipo de veículo.
+      - name: VALOR_VEICULO
+        description: Valor do veículo no momento da aquisição, formatado com 2 casas decimais.
+      - name: DATA_INCLUSAO
+        description: Data e hora em que o registro do veículo foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data e hora da última atualização do registro do veículo. Caso não haja atualização, será considerada 
+          a data de inclusão.

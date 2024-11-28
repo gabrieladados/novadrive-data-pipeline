@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_estados
+    description: >
+      Esta dimensão contém informações detalhadas sobre os estados, incluindo o identificador único do estado,
+      nome do estado, sigla do estado e as datas de inclusão e atualização do registro. Ela é usada para associar
+      os estados a outras entidades, como cidades e concessionárias, nas análises.
+    columns:
+      - name: ID_ESTADOS
+        description: Identificador único de cada estado.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_ESTADO
+        description: Nome completo do estado.
+      - name: SIGLA_ESTADO
+        description: Sigla do estado (por exemplo, "SP" para São Paulo).
+      - name: DATA_INCLUSAO
+        description: Data e hora em que o registro do estado foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data e hora da última atualização do registro. Caso não haja uma data de atualização, 
+          será considerada a data de inclusão.

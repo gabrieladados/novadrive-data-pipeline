@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: analise_temporal_vendas
+    description: >
+      O modelo `analise_temporal_vendas` realiza uma análise temporal das vendas de veículos, agregando os dados 
+      de vendas por mês. Ele calcula a quantidade total de vendas, o total de valor pago pelas vendas e o valor médio 
+      das vendas para cada mês. Este modelo é útil para analisar tendências mensais de vendas e avaliar o desempenho 
+      das concessionárias ao longo do tempo.
+    columns:
+      - name: mes_venda
+        description: Mês de cada venda, truncado para o primeiro dia do mês.
+        tests:
+          - not_null
+      - name: qtd_vendas
+        description: Quantidade total de vendas realizadas no mês.
+        tests:
+          - not_null
+      - name: total_vendas
+        description: Total de valor pago pelas vendas no mês, arredondado para duas casas decimais.
+        tests:
+          - not_null
+      - name: valor_medio
+        description: Valor médio pago por venda no mês, arredondado para duas casas decimais.
+        tests:
+          - not_null

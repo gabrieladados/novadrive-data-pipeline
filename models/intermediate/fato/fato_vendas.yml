@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: fato_vendas
+    description: >
+      A tabela `fato_vendas` armazena informações sobre as vendas realizadas, incluindo os identificadores dos 
+      veículos, concessionárias, vendedores e clientes envolvidos, o valor pago pela venda, e as datas de 
+      inclusão e atualização dos registros. Essa tabela é essencial para análises relacionadas a desempenho de vendas,
+      produtos, concessionárias e vendedores.
+    columns:
+      - name: ID_VENDAS
+        description: Identificador único de cada venda.
+        tests:
+          - unique
+          - not_null
+      - name: ID_VEICULOS
+        description: Identificador do veículo envolvido na venda.
+        tests:
+          - not_null
+      - name: ID_CONCESSIONARIAS
+        description: Identificador da concessionária responsável pela venda.
+        tests:
+          - not_null
+      - name: ID_VENDEDORES
+        description: Identificador do vendedor que realizou a venda.
+        tests:
+          - not_null
+      - name: ID_CLIENTES
+        description: Identificador do cliente que efetuou a compra.
+        tests:
+          - not_null
+      - name: VALOR_PAGO
+        description: Valor pago pelo cliente pela venda do veículo.
+        tests:
+          - not_null
+      - name: DATA_VENDA
+        description: Data e hora em que a venda foi realizada.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data e hora em que o registro da venda foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: Data e hora da última atualização do registro da venda.

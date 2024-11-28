@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: analise_vendas_concessionarias
+    description: >
+      O modelo `analise_vendas_concessionarias` realiza uma análise de vendas agregada por concessionária, 
+      cidade e estado. Ele calcula a quantidade total de vendas, o total de valor pago pelas vendas e a 
+      média do valor pago por venda, proporcionando uma visão detalhada do desempenho de cada concessionária 
+      em diferentes regiões. Esse modelo ajuda a entender as vendas por localização e identifica quais 
+      concessionárias têm maior desempenho em termos de volume e valor de vendas.
+    columns:
+      - name: id_concessionaria
+        description: Identificador único da concessionária.
+        tests:
+          - not_null
+      - name: nome_concessionaria
+        description: Nome da concessionária.
+        tests:
+          - not_null
+      - name: cidade
+        description: Nome da cidade onde a concessionária está localizada.
+        tests:
+          - not_null
+      - name: estado
+        description: Nome do estado onde a concessionária está localizada.
+        tests:
+          - not_null
+      - name: qtd_vendas
+        description: Quantidade total de vendas realizadas pela concessionária no período.
+        tests:
+          - not_null
+      - name: total_venda
+        description: Total de valor pago pelas vendas realizadas pela concessionária, arredondado para duas casas decimais.
+        tests:
+          - not_null
+      - name: media_venda
+        description: Valor médio pago por cada venda realizada pela concessionária, arredondado para duas casas decimais.
+        tests:
+          - not_null
