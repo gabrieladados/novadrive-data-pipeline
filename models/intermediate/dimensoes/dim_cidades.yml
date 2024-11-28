@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_cidades
+    description: >
+      Esta dimensão contém informações sobre as cidades, incluindo o identificador da cidade, 
+      o nome da cidade, o identificador do estado e as datas de inclusão e atualização. 
+      Ela é usada para integrar e fornecer informações sobre as cidades nas análises e consultas.
+    columns:
+      - name: ID_CIDADES
+        description: Identificador único de cada cidade.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_CIDADE
+        description: Nome da cidade.
+      - name: ID_ESTADOS
+        description: Identificador do estado ao qual a cidade pertence.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data e hora em que o registro da cidade foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data e hora da última atualização do registro. Caso não haja uma data de atualização,
+          será considerada a data de inclusão.

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_vendedores
+    description: >
+      A tabela `dim_vendedores` contém informações detalhadas sobre os vendedores, incluindo o identificador único,
+      o nome do vendedor, o identificador da concessionária a qual o vendedor pertence, além das datas de inclusão 
+      e atualização. Essa tabela é fundamental para análises que relacionam vendedores a vendas, concessionárias e 
+      clientes.
+    columns:
+      - name: ID_VENDEDORES
+        description: Identificador único de cada vendedor.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_VENDEDOR
+        description: Nome completo do vendedor.
+      - name: ID_CONCESSIONARIAS
+        description: Identificador da concessionária a qual o vendedor está associado.
+      - name: DATA_INCLUSAO
+        description: Data e hora em que o registro do vendedor foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data e hora da última atualização do registro do vendedor. Caso não haja atualização, será considerada 
+          a data de inclusão.

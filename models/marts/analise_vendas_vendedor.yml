@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: analise_vendas_vendedor
+    description: >
+      O modelo `analise_vendas_vendedor` oferece uma análise detalhada das vendas realizadas pelos vendedores, 
+      incluindo a quantidade de vendas realizadas, o total de vendas gerado e o valor médio pago nas vendas. 
+      Este modelo é útil para avaliar o desempenho de cada vendedor e sua contribuição para o total de vendas da concessionária.
+    columns:
+      - name: id_vendedor
+        description: Identificador único do vendedor.
+        tests:
+          - not_null
+      - name: NOME_VENDEDOR
+        description: Nome completo do vendedor.
+        tests:
+          - not_null
+      - name: NOME_CONCESSIONARIA
+        description: Nome da concessionária onde o vendedor atua.
+        tests:
+          - not_null
+      - name: qtd_vendas
+        description: Quantidade total de vendas realizadas pelo vendedor.
+        tests:
+          - not_null
+      - name: total
+        description: Total de valor pago pelas vendas realizadas pelo vendedor, arredondado para duas casas decimais.
+        tests:
+          - not_null
+      - name: valor_medio
+        description: Valor médio pago por cada venda realizada pelo vendedor, arredondado para duas casas decimais.
+        tests:
+          - not_null

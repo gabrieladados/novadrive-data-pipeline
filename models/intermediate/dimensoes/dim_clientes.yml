@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_clientes
+    description: >
+      Esta dimensão contém informações detalhadas sobre os clientes, incluindo o identificador único, 
+      nome, endereço, identificador da concessionária associada, e as datas de inclusão e atualização do registro.
+      Ela é essencial para análises relacionadas aos clientes e suas informações cadastrais.
+    columns:
+      - name: ID_CLIENTES
+        description: Identificador único de cada cliente.
+        tests:
+          - not_null
+      - name: NOME_CLIENTE
+        description: Nome completo do cliente.
+      - name: ENDERECO
+        description: Endereço completo do cliente.
+      - name: ID_CONCESSIONARIAS
+        description: Identificador da concessionária com a qual o cliente está associado.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data e hora em que o registro do cliente foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data e hora da última atualização do registro. Se não houver uma data de atualização, 
+          será considerada a data de inclusão.

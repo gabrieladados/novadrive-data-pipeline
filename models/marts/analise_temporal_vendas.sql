@@ -1,5 +1,3 @@
--- vendas ao longo do tempo: mes_venda, numero, vendas, total vendas, valor medio venda
-
 {{config(materalized='table')}}
 
 SELECT 

@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: dim_concessionarias
+    description: >
+      Esta dimensão contém informações sobre as concessionárias, incluindo o identificador da concessionária, 
+      o nome da concessionária, o identificador da cidade e as datas de inclusão e atualização. 
+      Ela é usada para associar as concessionárias a outras entidades, como clientes e veículos, nas análises.
+    columns:
+      - name: ID_CONCESSIONARIAS
+        description: Identificador único de cada concessionária.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_CONCESSIONARIA
+        description: Nome da concessionária.
+      - name: ID_CIDADES
+        description: Identificador da cidade onde a concessionária está localizada.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data e hora em que o registro da concessionária foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data e hora da última atualização do registro. Caso não haja uma data de atualização,
+          será considerada a data de inclusão.

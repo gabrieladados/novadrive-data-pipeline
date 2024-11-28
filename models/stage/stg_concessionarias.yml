@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_concessionarias
+    description: >
+      Este modelo cria uma visualização consolidada da tabela `concessionarias` disponível na fonte `sources`. 
+      Ele remove espaços em excesso no nome das concessionárias e garante que a data de atualização esteja sempre preenchida, 
+      utilizando a data de inclusão como fallback.
+    columns:
+      - name: ID_CONCESSIONARIAS
+        description: Identificador único de cada concessionária.
+        tests:
+          - unique
+          - not_null
+      - name: NOME_CONCESSIONARIA
+        description: Nome da concessionária, com espaços extras removidos para padronização.
+      - name: ID_CIDADES
+        description: Identificador único da cidade onde a concessionária está localizada.
+        tests:
+          - not_null
+      - name: DATA_INCLUSAO
+        description: Data em que o registro foi incluído na base de dados.
+        tests:
+          - not_null
+      - name: DATA_ATUALIZACAO
+        description: >
+          Data da última atualização do registro. Caso esteja ausente na tabela de origem, 
+          será substituída pela data de inclusão (`DATA_INCLUSAO`) para garantir consistência.
