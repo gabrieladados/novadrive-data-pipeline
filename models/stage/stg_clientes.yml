@@ -11,7 +11,7 @@ models:
         tests:
           - not_null
       - name: NOME_CLIENTE
-        description: Nome do cliente formatado em caixa de título para padronização.
+        description: Nome do cliente.
       - name: ENDERECO
         description: Endereço do cliente, com espaços extras removidos para consistência.
       - name: ID_CONCESSIONARIAS
