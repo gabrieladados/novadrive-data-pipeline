@@ -1,2 +1,2 @@
 # novadrive-data-pipeline
-Do PostgreSQL ao Snowflake: Um Projeto End-to-End para a Concessionária Nova Drive
+# Do Data Warehouse ao Looker Studio: Projeto End-to-End de Análise para a concessionária Nova Drive
