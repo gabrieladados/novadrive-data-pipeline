@@ -331,3 +331,23 @@ Ao final deste projeto, conseguimos construir uma solução de engenharia de dad
 O dashboard criado oferece uma visualização clara e interativa dos principais KPIs, permitindo que os gestores da Nova Drive acompanhem o desempenho das vendas, identifiquem tendências e tomem decisões informadas de maneira ágil e segura. Além disso, a automação do processo elimina a necessidade de intervenção manual constante e garante a integridade e segurança dos dados, resolvendo os principais desafios que a equipe enfrentava.
 
 Essa solução não apenas otimiza o fluxo de trabalho, mas também proporciona mais confiança e agilidade na análise de dados, dando à Nova Drive uma vantagem estratégica no mercado competitivo de vendas de veículos.
+
+
+---
+
+
+## Constribuições
+
+Muito obrigada por acompanhar meu projeto até aqui! 🎉
+
+Contribuições são **muito bem-vindas**. Se você tem sugestões ou melhorias, fique à vontade para abrir uma **issue** ou enviar um **pull request**.
+
+Gostou do projeto? Não esqueça de dar uma ⭐️! 
+
+
+**Meus Contatos:**
+
+💻 [LinkedIn](https://www.linkedin.com/in/gabrielasantanamorais/)  
+📩 [E-mail](mailto:gabrielasmorais01@gmail.com)
+
+**Até a próxima!** 🚀
