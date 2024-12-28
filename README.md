@@ -336,7 +336,7 @@ Essa solução não apenas otimiza o fluxo de trabalho, mas também proporciona 
 ---
 
 
-## Constribuições
+## Contribuições
 
 Muito obrigada por acompanhar meu projeto até aqui! 🎉
 
